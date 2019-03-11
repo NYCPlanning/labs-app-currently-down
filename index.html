@@ -39,26 +39,15 @@
       border: 1em solid White;
       box-shadow: 0 0.5em 10px rgba(0,0,0,0.1);
       border-radius: 0.5em;
-      padding: 1em;
-      margin: 0 0 1em;
+      padding: 1.5em 1em 1em;
+      margin: 0 0 2em;
       position: relative;
 
       animation-name: wiggle;
       animation-duration: 3s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
-      transform-origin: 50% 0;
-    }
-    a::after {
-      content: '';
-      background-color: #666;
-      height: 0.5em;
-      width: 0.5em;
-      border-radius: 0.25em;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      margin-left: -0.25em;
+      transform-origin: 50% -4em;
     }
     @keyframes wiggle {
       0% {transform: rotate(1deg);}
@@ -67,15 +56,74 @@
       75% {transform: rotate(-2deg);}
       100% {transform: rotate(1deg);}
     }
+    a::after {
+      content: '';
+      background-color: #666;
+      height: 0.5em;
+      width: 0.5em;
+      border-radius: 0.25em;
+      position: absolute;
+      top: -4em;
+      left: 50%;
+      margin-left: -0.25em;
+    }
+    .string {
+      display: block;
+      background-color: #b84;
+      position: absolute;
+      width: 2px;
+      height: 5.5em;
+      top: -4em;
+      left: 50%;
+      transform: rotate(45deg);
+      transform-origin: 50% 0;
+      border-radius: 2px;
+    }
+    .string::after {
+      content: '';
+      display: block;
+      background-color: #b84;
+      position: absolute;
+      width: 2px;
+      height: 5.5em;
+      top: 0;
+      left: -2px;
+      transform: rotate(-90deg);
+      transform-origin: 100% 0;
+      border-radius: 2px;
+    }
+    .hole-l {
+      display: block;
+      background-color: #ccc;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: -0.25em;
+      left: 50%;
+      margin-left: -4em;
+      border-radius: 100%;
+    }
+    .hole-r {
+      display: block;
+      background-color: #ccc;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: -0.25em;
+      right: 50%;
+      margin-right: -4em;
+      border-radius: 100%;
+    }
   </style>
 </head>
 <body>
   <div>
-    <p>
-      <a href="https://www1.nyc.gov/site/planning/index.page">
-        <img src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" />
-      </a>
-    </p>
+    <a href="https://www1.nyc.gov/site/planning/index.page">
+      <span class="hole-l"></span>
+      <span class="hole-r"></span>
+      <span class="string"></span>
+      <img src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" />
+    </a>
     <h1>Site temporarily under maintenance</h1>
     <p>We are currently performing maintenance on this application. Please check back later. Thank you for your patience.</p>
   </div>
