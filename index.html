@@ -15,24 +15,69 @@
       line-height: 1.5;
       color: #1a2a2a;
       text-align: center;
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      -ms-interpolation-mode: bicubic;
     }
     h1, p {
-      max-width: 35em;
+      max-width: 40em;
       margin: 0 auto 1rem;
     }
     a {
-      line-height: inherit;
-      color: SteelBlue;
-      text-decoration: none;
-      cursor: pointer;
+      display: inline-block;
+      background-color: White;
+      border: 1em solid White;
+      box-shadow: 0 0.5em 10px rgba(0,0,0,0.1);
+      border-radius: 0.5em;
+      padding: 1em;
+      margin: 0 0 1em;
+      position: relative;
+
+      animation-name: wiggle;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      transform-origin: 50% 0;
     }
-    a:hover, a:focus {
-      color: #2c577b;
+    a::after {
+      content: '';
+      background-color: #666;
+      height: 0.5em;
+      width: 0.5em;
+      border-radius: 0.25em;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -0.25em;
+    }
+    @keyframes wiggle {
+      0% {transform: rotate(1deg);}
+      25% {transform: rotate(-1deg);}
+      50% {transform: rotate(5deg);}
+      75% {transform: rotate(-2deg);}
+      100% {transform: rotate(1deg);}
     }
   </style>
 </head>
 <body>
-  <h1>Site temprarily under maintenance</h1>
-  <p>We are currently performing maintenance on this application. Please check back later. Thank you for your patience.</p>
+  <div>
+    <p>
+      <a href="https://www1.nyc.gov/site/planning/index.page">
+        <img src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" />
+      </a>
+    </p>
+    <h1>Site temporarily under maintenance</h1>
+    <p>We are currently performing maintenance on this application. Please check back later. Thank you for your patience.</p>
+  </div>
 </body>
 </html>
